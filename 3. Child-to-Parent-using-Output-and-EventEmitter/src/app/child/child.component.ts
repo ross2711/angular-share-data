@@ -9,12 +9,10 @@ export class ChildComponent {
 
   constructor() { }
 
-  message: string = "I am calling from Child Component!"
-
   @Output() messageEvent = new EventEmitter<string>();
+  message: string = "I am calling from Child Component!"
 
   sendMessage() {
     this.messageEvent.emit(this.message)
   }
-
 }
