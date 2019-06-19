@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 
 @Component({
@@ -7,9 +7,7 @@ import { ChildComponent } from '../child/child.component';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements AfterViewInit {
-
   @ViewChild(ChildComponent) child;
-
   appParentMessage: string;
 
   constructor() { }
