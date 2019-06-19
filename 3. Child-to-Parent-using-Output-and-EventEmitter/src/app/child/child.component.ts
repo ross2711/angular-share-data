@@ -6,11 +6,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
-
-  constructor() { }
-
   @Output() messageEvent = new EventEmitter<string>();
   message: string = "I am calling from Child Component!"
+
+  constructor() { }
 
   sendMessage() {
     this.messageEvent.emit(this.message)
