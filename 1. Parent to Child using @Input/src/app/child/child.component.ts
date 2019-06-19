@@ -6,12 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
+  @Input() appChildMessage: string;
 
   constructor() { }
 
   ngOnInit() {
   }
-
-  @Input() appChildMessage: string;
-
 }

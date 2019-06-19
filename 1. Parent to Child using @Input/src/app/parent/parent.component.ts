@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-  appParentMessage = "hello"
+  public appParentMessage = "hello"
+
   constructor() { }
 
   ngOnInit() {
   }
-
-
 }
