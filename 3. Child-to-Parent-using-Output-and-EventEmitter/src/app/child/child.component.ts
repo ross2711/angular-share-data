@@ -2,16 +2,21 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
-  templateUrl: './child.component.html',
+  template: `
+    <p>
+      child works!
+    </p>
+    <button (click)="sendMessage()">Send Message</button>
+  `,
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
   @Output() messageEvent = new EventEmitter<string>();
-  message: string = "I am calling from Child Component!"
+  message: string = 'I am calling from Child Component!';
 
-  constructor() { }
+  constructor() {}
 
   sendMessage() {
-    this.messageEvent.emit(this.message)
+    this.messageEvent.emit(this.message);
   }
 }

@@ -2,16 +2,21 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
-  templateUrl: './parent.component.html',
+  template: `
+    <p>
+      parent works!
+    </p>
+    <p>Received message: {{ appParentMessage }}</p>
+    <hr />
+    <app-child (messageEvent)="receiveMessage($event)"></app-child>
+  `,
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent {
-
-  constructor() { }
-
   appParentMessage: string;
+  constructor() {}
 
   receiveMessage($event) {
-    this.appParentMessage = $event
+    this.appParentMessage = $event;
   }
 }

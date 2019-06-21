@@ -3,14 +3,21 @@ import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
-  templateUrl: './parent.component.html',
+  template: `
+    <p>
+      parent works!
+    </p>
+    <p>Child Message: {{ appParentMessage }}</p>
+    <hr />
+    <app-child></app-child>
+  `,
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements AfterViewInit {
-  @ViewChild(ChildComponent) child;
   appParentMessage: string;
+  @ViewChild(ChildComponent, { static: false }) child;
 
-  constructor() { }
+  constructor() {}
 
   ngAfterViewInit() {
     this.appParentMessage = this.child.appChildMessage;

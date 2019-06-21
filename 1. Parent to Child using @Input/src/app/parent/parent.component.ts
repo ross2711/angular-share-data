@@ -2,14 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
-  templateUrl: './parent.component.html',
+  template: `
+    <p>
+      parent works!
+    </p>
+    <hr />
+    <app-child [appChildMessage]="appParentMessage"></app-child>
+  `,
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-  public appParentMessage = "hello"
+  public appParentMessage = 'hello';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
